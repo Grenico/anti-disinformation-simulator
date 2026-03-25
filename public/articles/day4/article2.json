@@ -1,0 +1,24 @@
+{
+  "id": 7,
+  "title": "“青苗计划”十年，我看到的是制度的温度",
+  "content": "<p>教育公平是句老话，但真正做到不容易。咚达的“青苗计划”定向培养乡村教师，十年输送3000多名本科老师到偏远地区。有人质疑：花那么多钱值得吗？我看值得。因为那些地方的孩子，之前连个正规老师都没有。而且七成以上老师期满后选择留下，说明他们真的愿意扎根。更重要的是，青苗班的孩子学业合格率比非项目班高11个百分点，辍学率下降6%。教育不是生意，是投资人的未来。这种用制度留住人的办法，比短期支教更有力量。希望这样的计划再多一点，再久一点。</p>",
+  "author": {
+    "name": "行路人",
+    "avatar": "https://api.dicebear.com/7.x/personas/svg?seed=EduTalk"
+  },
+  "isViolation": false,
+  "violationType": "",
+  "expectedAction": "pass",
+  "fallacies": [],
+  "facts": [
+    {
+      "text": "“青苗计划”十年输送3000多名本科教师到乡村，七成以上期满留任。",
+      "sourceStatus": "unreliable"
+    },
+    {
+      "text": "青苗教师所教班级学业合格率比非项目班高11个百分点，辍学率下降6%。",
+      "sourceStatus": "unreliable"
+    }
+  ],
+  "difficulty": 3
+}

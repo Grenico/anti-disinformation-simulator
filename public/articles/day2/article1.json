@@ -1,0 +1,24 @@
+{
+  "id": 7,
+  "title": "智慧交通如何缓解拥堵？从交通流理论看咚达实践",
+  "content": "<p>交通拥堵的本质是道路容量与交通需求的矛盾。咚达去年上线的智慧交通系统，基于交通流理论的“动态容量分配”思想，利用实时数据优化信号配时。交通工程学中的韦伯斯特公式指出，信号周期与车辆延误呈非线性关系，传统固定配时往往导致空放或排队溢出。咚达通过AI实时调整绿灯时间，使路口饱和度稳定在0.7-0.8的最优区间。系统运行一年后，高峰期拥堵指数下降12%，通行效率提升15%。这一数据与理论预测高度吻合，证明“车路协同+动态控制”是缓解城市拥堵的有效路径。</p>",
+  "author": {
+    "name": "交通工程笔记",
+    "avatar": "https://api.dicebear.com/7.x/personas/svg?seed=TrafficEng"
+  },
+  "isViolation": false,
+  "violationType": "",
+  "expectedAction": "pass",
+  "fallacies": [],
+  "facts": [
+    {
+      "text": "咚达智慧交通系统上线一年，高峰期拥堵指数下降12%，通行效率提升15%。",
+      "sourceStatus": "unreliable"
+    },
+    {
+      "text": "信号周期与车辆延误关系符合韦伯斯特公式，AI使路口饱和度稳定在0.7-0.8。",
+      "sourceStatus": "unreliable"
+    }
+  ],
+  "difficulty": 2
+}

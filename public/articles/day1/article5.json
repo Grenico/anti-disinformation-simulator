@@ -1,0 +1,20 @@
+{
+  "id": 7,
+  "title": "社区垃圾分类积分制，为什么我说它是“聪明政策”？",
+  "content": "<p>最近，我们社区搞了个垃圾分类积分制，扔对了给积分，能换鸡蛋、纸巾。一开始我觉得这就是花架子，结果三个月下来，楼道里乱扔垃圾的少了，连我家老太太都开始研究什么垃圾该扔哪个桶。说实话，这招比罚款管用多了。罚款让人反感，积分让人主动。我查了一下，星城社区实行这个制度后，分类准确率从43%提到81%。这就是正向激励的力量。与其整天想着怎么罚，不如琢磨怎么让人愿意干。这种“聪明政策”，希望能多来点。</p>",
+  "author": {
+    "name": "邻家小北",
+    "avatar": "https://api.dicebear.com/7.x/personas/svg?seed=NeighborWang"
+  },
+  "isViolation": false,
+  "violationType": "",
+  "expectedAction": "pass",
+  "fallacies": [],
+  "facts": [
+    {
+      "text": "星城社区垃圾分类积分制实施后，分类准确率从43%提升至81%。",
+      "sourceStatus": "unreliable"
+    }
+  ],
+  "difficulty": 1
+}

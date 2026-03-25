@@ -1,0 +1,24 @@
+{
+  "id": 7,
+  "title": "AI辅助诊断的临床价值：基于安心医院一年的数据评估",
+  "content": "<p>咚达安心医院急诊科引入AI辅助诊断系统一年后，我们对其进行了回顾性分析。采用倾向性评分匹配法，比较使用AI前后的两组病例（n=1,237 vs n=1,298）。结果显示：AI组急诊误诊率下降28%（3.2% vs 4.5%，p<0.01），平均诊断时间缩短22分钟（p<0.001）。特别是在胸痛和卒中这类时间敏感性疾病中，AI辅助组的CT阅片时间缩短了37%。这一改善主要源于AI的“异常检测”功能，它使医生对可疑征象的检出率提高了41%。研究还发现，人机协同模式显著减少了因疲劳导致的漏诊，尤其在夜班时段效果最为明显。数据证实：AI辅助并非替代医生，而是作为有效的决策支持工具。</p>",
+  "author": {
+    "name": "老Mike",
+    "avatar": "https://api.dicebear.com/7.x/personas/svg?seed=MedData"
+  },
+  "isViolation": false,
+  "violationType": "",
+  "expectedAction": "pass",
+  "fallacies": [],
+  "facts": [
+    {
+      "text": "AI辅助诊断系统启用一年，急诊误诊率从4.5%降至3.2%（下降28%），诊断时间平均缩短22分钟。",
+      "sourceStatus": "unreliable"
+    },
+    {
+      "text": "倾向性评分匹配分析显示AI辅助组对可疑征象检出率提高41%，夜班效果最明显。",
+      "sourceStatus": "unreliable"
+    }
+  ],
+  "difficulty": 2
+}

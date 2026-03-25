@@ -1,0 +1,20 @@
+{
+  "id": 7,
+  "title": "保障房配套先行，这次咚达做对了什么？",
+  "content": "<p>保障房最大的痛点是什么？位置偏、配套差。很多人宁愿挤城中村也不愿住保障房，就是因为买个菜都要走半小时。但最近星港新城交房，我发现它跟幼儿园、卫生站、公交接驳线一起交付。别小看这点改变——以前都是房子建好两三年，配套才慢慢补上，居民骂声一片。这次“同步规划、同步建设、同步交付”虽然只是机制调整，但直接提升了居住体验。住户王女士说现在孩子上学、老人看病都方便。这种“以人为本”的细节，才是真正解决民生问题的关键。希望所有保障房都能照这个标准来。</p>",
+  "author": {
+    "name": "辉光破壁人",
+    "avatar": "https://api.dicebear.com/7.x/personas/svg?seed=CityObserver"
+  },
+  "isViolation": false,
+  "violationType": "",
+  "expectedAction": "pass",
+  "fallacies": [],
+  "facts": [
+    {
+      "text": "星港新城保障房项目与幼儿园、卫生站、公交接驳线同步交付使用。",
+      "sourceStatus": "unreliable"
+    }
+  ],
+  "difficulty": 4
+}
