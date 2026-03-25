@@ -1,9 +1,10 @@
-<template><div class="opening-scene" :class="{ 'fade-out': isFadingOut }" @click="handleClick"><div class="opening-content"><div class="opening-text">{{ displayedText }}<span class="cursor" :class="{ 'blink': isWaitingForClick }"></span></div></div><div class="click-hint" v-if="isWaitingForClick">点击 / 按Enter继续</div></div></template><script setup lang="ts">import { ref, onMounted, onUnmounted } from 'vue';
+<template><div class="opening-scene" :class="{ 'fade-out': isFadingOut, 'loading': isLoading }" @click="handleClick"><div class="loading-screen" v-if="isLoading"><div class="loading-spinner"></div><div class="loading-text">加载中...</div></div><div class="opening-content" v-if="!isLoading"><div class="opening-text">{{ displayedText }}<span class="cursor" :class="{ 'blink': isWaitingForClick }"></span></div></div><div class="click-hint" v-if="!isLoading && isWaitingForClick">点击 / 按Enter继续</div></div></template><script setup lang="ts">import { ref, onMounted, onUnmounted } from 'vue';
 
 const displayedText = ref('');
 const isWaitingForClick = ref(false);
 const isFadingOut = ref(false);
 const isProcessing = ref(false);
+const isLoading = ref(true);
 // 标记开场动画是否已经完成，防止重复触发
 let openingCompleted = false;
 
@@ -208,9 +209,31 @@ const handleKeyDown = (event: KeyboardEvent) => {
 
 
 
-onMounted(() => {
+// 预加载背景图片
+const preloadBackgroundImage = () => {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.src = '/assets/images/opening-background.jpg';
+    img.onload = () => {
+      console.log('背景图片加载完成');
+      resolve(true);
+    };
+    img.onerror = () => {
+      console.error('背景图片加载失败');
+      resolve(false);
+    };
+  });
+};
+
+onMounted(async () => {
   // 预加载音效
   preloadSounds();
+  
+  // 预加载背景图片
+  await preloadBackgroundImage();
+  
+  // 图片加载完成后才开始
+  isLoading.value = false;
   
   // 播放背景音乐
   backgroundMusic.load();
@@ -241,6 +264,47 @@ onUnmounted(() => {
   background-position: center;
   position: relative;
   transition: opacity 2s ease;
+}
+
+.opening-scene.loading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(0, 255, 255, 0.3);
+  border-top: 4px solid #00ffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loading-text {
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .opening-scene::before {
