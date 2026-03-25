@@ -236,7 +236,7 @@ onUnmounted(() => {
   min-height: 100vh;
   padding: 80px;
   text-align: left;
-  background-image: url('/assets/images/opening-background.png');
+  background-image: url('/assets/images/opening-background.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
