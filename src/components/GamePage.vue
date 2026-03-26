@@ -602,8 +602,9 @@ const addBulletHole = (event: MouseEvent) => {
   
   const target = event.currentTarget as HTMLElement;
   const rect = target.getBoundingClientRect();
-  const x = event.clientX - rect.left;
-  const y = event.clientY - rect.top;
+  // 调整坐标，让弹孔中心点对准鼠标位置（弹孔大小为40x40px）
+  const x = event.clientX - rect.left - 20;
+  const y = event.clientY - rect.top - 20;
   
   bulletHoles.value.push({ x, y });
   
