@@ -12,12 +12,12 @@
   "fallacies": ["数据对比", "诉诸情感", "以偏概全", "偷换概念"],
   "facts": [
     {
-      "text": "咚达一粒药从获批到进医保的平均时间是4.2年，是辉光联邦的2.8倍。",
+      "text": "患者家属自发组织的调研显示",
       "sourceStatus": "unreliable"
     },
     {
-      "text": "咚达医保局官网公示的谈判药品目录中，罕见病用药占比不足3%。",
-      "sourceStatus": "missing"
+      "text": "一位参与医保谈判的专家私下透露",
+      "sourceStatus": "unreliable"
     }
   ],
   "difficulty": 5

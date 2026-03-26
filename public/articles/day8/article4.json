@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "灵墟山游客量同比增长230%，旅游收入翻三番。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "missing"
     },
     {
       "text": "国际遗产保护联盟报告指出核心区游客承载量已超设计上限三倍，与樱都国‘月见山’的预约限流、原住民共管模式相比，咚达更偏向商业优先。",
-      "sourceStatus": "missing"
+      "sourceStatus": "misquoted"
     }
   ],
   "difficulty": 6

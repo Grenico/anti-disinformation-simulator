@@ -12,12 +12,8 @@
   "fallacies": ["偷换概念", "以偏概全", "诉诸权威", "虚假对比"],
   "facts": [
     {
-      "text": "咚达有7所高校进入世界大学排名前100。",
-      "sourceStatus": "unreliable"
-    },
-    {
       "text": "咚达高校的国际合作论文比例从十年前的28%下降到19%，而辉光同期从43%上升到51%。",
-      "sourceStatus": "missing"
+      "sourceStatus": "misquoted"
     }
   ],
   "difficulty": 6

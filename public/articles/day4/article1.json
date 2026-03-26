@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "咚达职业俱乐部的青训投入占总支出平均仅为3.8%，而辉光联邦这一数字是17.2%。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "missing"
     },
     {
       "text": "一位不愿透露姓名的退役国脚坦言：“我们的青训体系是急功近利的。”",
-      "sourceStatus": "missing"
+      "sourceStatus": "unreliable"
     }
   ],
   "difficulty": 4

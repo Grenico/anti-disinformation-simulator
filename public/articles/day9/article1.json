@@ -13,11 +13,7 @@
   "facts": [
     {
       "text": "2064年，辉光用一个小时活捉迪兰国新任领袖阿卜杜勒·纳吉姆，再用一小时精准清除其核心据点。",
-      "sourceStatus": "missing"
-    },
-    {
-      "text": "从“抓不到”到“一小时结束”，背后是情报、指挥、打击、评估的全链条闭环。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "truth"
     }
   ],
   "difficulty": 6

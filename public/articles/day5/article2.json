@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "咚达的网络信息管控强度在全球排名第4位，而辉光联邦则排名第87位。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "truth"
     },
     {
       "text": "咚达用户每周平均触发的“内容不可见”提示达11次，是辉光联邦的37倍。",
-      "sourceStatus": "missing"
+      "sourceStatus": "truth"
     }
   ],
   "difficulty": 4

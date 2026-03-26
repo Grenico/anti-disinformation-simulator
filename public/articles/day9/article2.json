@@ -12,12 +12,12 @@
   "fallacies": ["偷换概念", "诉诸自然", "虚假两难", "以偏概全"],
   "facts": [
     {
-      "text": "“如果咚达传统药没用，那咚达人是怎么活到现在的？”是一个逻辑陷阱。",
+      "text": "生物种群的延续，医药只是极次要因素",
       "sourceStatus": "missing"
     },
     {
       "text": "辉光医学经过了几百年循证检验成为全球标准。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "missing"
     }
   ],
   "difficulty": 6

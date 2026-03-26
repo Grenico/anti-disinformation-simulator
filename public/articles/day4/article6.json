@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "咚达每年新上映的动漫作品中，定位成年人的仅占12%，而在樱都国，这一比例高达61%。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "misquoted"
     },
     {
       "text": "一位动漫行业资深从业者指出：“不是没有创作者想做深刻的内容，是监管环境不允许。”",
-      "sourceStatus": "missing"
+      "sourceStatus": "unreliable"
     }
   ],
   "difficulty": 4

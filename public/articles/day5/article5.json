@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "过去三年咚达餐饮服务业减少了37万个基础服务岗位，取而代之的是扫码点餐、机器人送餐。",
-      "sourceStatus": "missing"
+      "sourceStatus": "misquoted"
     },
     {
       "text": "樱都国消费者权益组织的报告显示，樱都国有超过六成消费者表示，选择餐厅时会优先考虑“有人服务”而非“效率高”。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "misquoted"
     }
   ],
   "difficulty": 4

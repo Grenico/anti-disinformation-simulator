@@ -12,7 +12,7 @@ export interface Article {
   fallacies: string[];
   facts: {
     text: string;
-    sourceStatus: 'unreliable' | 'incomplete' | 'missing' | 'misquoted' | 'normal';
+    sourceStatus: 'unreliable' | 'incomplete' | 'missing' | 'misquoted' | 'normal' | 'truth';
   }[];
   originalContext?: {
     quote: string;

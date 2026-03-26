@@ -9,7 +9,7 @@
   "isViolation": true,
   "violationType": "片面真相/道德评判",
   "expectedAction": "revise",
-  "fallacies": ["偷换概念", "诉诸人身", "轻率归纳", "虚假两难"],
+  "fallacies": ["偷换概念", "人身攻击", "轻率归纳", "虚假两难"],
   "facts": [
     {
       "text": "我专门去工厂看过，这种材料成本不过几十信用点，和普通化纤没什么区别。",

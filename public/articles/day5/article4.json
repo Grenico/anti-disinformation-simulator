@@ -12,12 +12,8 @@
   "fallacies": ["虚假对比", "以偏概全", "偷换概念", "诉诸权威"],
   "facts": [
     {
-      "text": "咚达在“司法独立”维度的得分仅2.4分（满分10分），而星联国得分为8.7分。",
-      "sourceStatus": "unreliable"
-    },
-    {
       "text": "咚达的行政诉讼案件中，政府胜诉率高达97.3%，而在星联国，这一数字为54.6%。",
-      "sourceStatus": "missing"
+      "sourceStatus": "misquoted"
     }
   ],
   "difficulty": 4

@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "“逐日号”的固体燃料配方与辉光联邦十年前公开的“泰坦-3”型高度相似。",
-      "sourceStatus": "missing"
+      "sourceStatus": "truth"
     },
     {
-      "text": "制导系统的惯性测量单元（IMU）核心器件仍依赖进口。",
-      "sourceStatus": "unreliable"
+      "text": "一份基于公开文献的技术路线图分析显示，该型号的核心突破更多体现在系统集成层面，而非基础科学或关键材料领域。",
+      "sourceStatus": "missing"
     }
   ],
   "difficulty": 6

@@ -21,7 +21,12 @@
         'report-exit': animationState === 'report-exit',
         'shooting-mode': animationState === 'shooting-mode',
         'active': currentContainerIndex === 1
-      }" @click="addBulletHole"><div class="author-info"><div class="avatar">{{ gameStore.currentArticle.author.name.charAt(0) }}</div><span class="author-name">{{ gameStore.currentArticle.author.name }}</span></div><h2 class="article-title">{{ gameStore.currentArticle.title }}</h2><div class="article-content" v-html="highlightedContent"></div><!-- 弹孔效果 --><div class="bullet-hole" v-for="(hole, index) in bulletHoles" :key="index" :style="{ left: hole.x + 'px', top: hole.y + 'px' }"></div></div></template></div><!-- 右侧工作区 - 笔记本 --><div class="tech-panel workspace-panel"><div class="notebook-button" @click="openWorkspace"><div class="notebook-text">检验清单</div></div></div></div><!-- 工作区模态框 --><div class="modal-overlay" :class="{ 'show': showWorkspace }" @click="closeWorkspace"><div class="close-button" @click="closeWorkspace">×</div><div class="modal-content" @click.stop><h2>检验清单</h2><div class="workspace-content"><div class="section"><h3>检验论据</h3><div class="checkbox-group"><label class="checkbox-item"><input type="checkbox" value="缺乏信息来源" v-model="selectedFlaws" @change="updateFlaws"><span>缺乏信息来源</span></label><label class="checkbox-item"><input type="checkbox" value="信息来源不可靠" v-model="selectedFlaws" @change="updateFlaws"><span>信息来源不可靠</span></label><label class="checkbox-item"><input type="checkbox" value="断章取义" v-model="selectedFlaws" @change="updateFlaws"><span>断章取义</span></label><label class="checkbox-item"><input type="checkbox" value="一切正常" v-model="selectedFlaws" @change="updateFlaws"><span>一切正常</span></label></div></div><div class="section"><h3>逻辑诊断</h3><div class="checkbox-group"><label class="checkbox-item"><input type="checkbox" value="预设前提" v-model="selectedFlaws" @change="updateFlaws"><span>预设前提</span></label><label class="checkbox-item"><input type="checkbox" value="前提与结论无关" v-model="selectedFlaws" @change="updateFlaws"><span>前提与结论无关</span></label><label class="checkbox-item"><input type="checkbox" value="推理太跳跃" v-model="selectedFlaws" @change="updateFlaws"><span>推理太跳跃</span></label><label class="checkbox-item"><input type="checkbox" value="没有问题" v-model="selectedFlaws" @change="updateFlaws"><span>没有问题</span></label></div></div></div></div></div><!-- 结局弹窗 --><div class="modal-overlay" :class="{ 'show': gameStore.isGameEnd }"><div class="modal-content" @click.stop><h2>星网人事部</h2><div class="ending-content"><p>实习期结束，感谢您对网络环境作出的贡献。</p></div><div class="modal-buttons"><button class="tech-button" @click="quitGame">回到标题页面</button></div></div></div><!-- 结算弹窗 --><div class="modal-overlay" :class="{ 'show': gameStore.isGameCompleted && !gameStore.isGameEnd }"><div class="modal-content" @click.stop><h2>今日总结（第 {{ gameStore.currentDay }} 天）</h2><div class="settlement-content"><div class="settlement-item"><span>清理掉的违规内容：{{ correctReports }}篇</span><span>+{{ correctReports * 60 }}￥</span></div><div class="settlement-item"><span>放过的违规内容：{{ incorrectPasses }}篇</span><span>-{{ incorrectPasses * 40 }}￥</span></div><div class="settlement-item"><span>误判的正确内容：{{ incorrectRevises + incorrectReports }}篇</span><span>-{{ (incorrectRevises + incorrectReports) * 40 }}￥</span></div><div class="settlement-item"><span>退回修改的内容：{{ correctRevises }}篇</span><span>+{{ correctRevises * 40 }}￥</span></div><div class="settlement-item"><span>额外奖励（正确识别违规点）：</span><span>+{{ bonusScore }}￥</span></div><div v-if="gameStore.departmentPenaltyOrBonus" class="settlement-item"><span>{{ gameStore.departmentPenaltyOrBonus.type === 'bonus' ? '部门奖励' : '部门处罚' }}：</span><span>{{ gameStore.departmentPenaltyOrBonus.type === 'bonus' ? '+' : '-' }}{{ gameStore.departmentPenaltyOrBonus.amount }}￥</span></div><div class="total-score"><strong>今日收入：{{ gameStore.dailyScore + bonusScore + (gameStore.departmentPenaltyOrBonus ? (gameStore.departmentPenaltyOrBonus.type === 'bonus' ? gameStore.departmentPenaltyOrBonus.amount : -gameStore.departmentPenaltyOrBonus.amount) : 0) }}￥</strong></div></div><div class="modal-buttons"><button class="tech-button" @click="nextDay">进入下一天</button></div></div></div><!-- 设置弹窗 -->
+      }" @click="addBulletHole"><div class="author-info"><div class="avatar">{{ gameStore.currentArticle.author.name.charAt(0) }}</div><span class="author-name">{{ gameStore.currentArticle.author.name }}</span></div><h2 class="article-title">{{ gameStore.currentArticle.title }}</h2><div class="article-content" v-html="highlightedContent"></div><!-- 弹孔效果 --><div class="bullet-hole" v-for="(hole, index) in bulletHoles" :key="index" :style="{ left: hole.x + 'px', top: hole.y + 'px' }"></div></div></template></div><!-- 右侧工作区 - 笔记本 --><div class="tech-panel workspace-panel"><div class="notebook-button" @click="openWorkspace"><div class="notebook-text">检验清单</div></div></div></div><!-- 工作区模态框 --><div class="modal-overlay" :class="{ 'show': showWorkspace }" @click="closeWorkspace"><div class="close-button" @click="closeWorkspace">×</div><div class="modal-content" @click.stop><h2>检验清单</h2><div class="workspace-content"><div class="section"><h3>检验论据</h3><div class="checkbox-group"><label class="checkbox-item"><input type="checkbox" value="缺乏信息来源" v-model="selectedFlaws" @change="updateFlaws"><span>缺乏信息来源</span></label><label class="checkbox-item"><input type="checkbox" value="信息来源不可靠" v-model="selectedFlaws" @change="updateFlaws"><span>信息来源不可靠</span></label><label class="checkbox-item"><input type="checkbox" value="断章取义" v-model="selectedFlaws" @change="updateFlaws"><span>断章取义</span></label><label class="checkbox-item"><input type="checkbox" value="一切正常" v-model="selectedFlaws" @change="updateFlaws"><span>一切正常</span></label></div></div><div class="section"><h3>逻辑诊断</h3><div class="checkbox-group"><label class="checkbox-item" v-for="(fallacy, index) in logicFallacies" :key="index"><input type="checkbox" :value="fallacy" v-model="selectedFlaws" @change="updateFlaws"><span>{{ fallacy }}</span></label><label class="checkbox-item"><input type="checkbox" value="没有问题" v-model="selectedFlaws" @change="updateFlaws"><span>没有问题</span></label></div></div></div></div></div><!-- 结局弹窗 --><div class="modal-overlay" :class="{ 'show': gameStore.isGameEnd }"><div class="modal-content" @click.stop><h2>星网人事部</h2><div class="ending-content"><p>实习期结束，感谢您对网络环境作出的贡献。</p></div><div class="modal-buttons"><button class="tech-button" @click="quitGame">回到标题页面</button></div></div></div><!-- 结算弹窗 --><div class="modal-overlay" :class="{ 'show': gameStore.isGameCompleted && !gameStore.isGameEnd }"><div class="modal-content" @click.stop><h2>今日总结（第 {{ gameStore.currentDay }} 天）</h2><div class="settlement-content"><div class="settlement-item"><span>清理掉的违规内容：{{ correctReports }}篇</span><span>+{{ correctReports * 60 }}￥</span></div><div class="settlement-item"><span>放过的违规内容：{{ incorrectPasses }}篇</span><span>-{{ incorrectPasses * 40 }}￥</span></div><div class="settlement-item"><span>误判的正确内容：{{ incorrectRevises + incorrectReports }}篇</span><span>-{{ (incorrectRevises + incorrectReports) * 40 }}￥</span></div><div class="settlement-item"><span>通过的正确内容：{{ correctPasses }}篇</span><span>+{{ correctPasses * 50 }}￥</span></div><div class="settlement-item"><span>退回修改的内容：{{ correctRevises }}篇</span><span>+{{ correctRevises * 40 }}￥</span></div><div class="settlement-item"><span>额外奖励（正确识别违规点）：</span><span>+{{ bonusScore }}￥</span></div><div v-if="gameStore.departmentPenaltyOrBonus" class="settlement-item"><span>{{ gameStore.departmentPenaltyOrBonus.type === 'bonus' ? '部门奖励' : '部门处罚' }}：</span><span>{{ gameStore.departmentPenaltyOrBonus.type === 'bonus' ? '+' : '-' }}{{ gameStore.departmentPenaltyOrBonus.amount }}￥</span></div><div class="total-score"><strong>今日收入：{{ correctReports * 60 - incorrectPasses * 40 - (incorrectRevises + incorrectReports) * 40 + correctPasses * 50 + correctRevises * 40 + bonusScore + (gameStore.departmentPenaltyOrBonus ? (gameStore.departmentPenaltyOrBonus.type === 'bonus' ? gameStore.departmentPenaltyOrBonus.amount : -gameStore.departmentPenaltyOrBonus.amount) : 0) }}￥</strong></div>
+      </div>
+      <div class="modal-buttons">
+        <button class="tech-button" @click="openDetailModal">查看明细</button>
+        <button class="tech-button" @click="nextDay">进入下一天</button>
+      </div></div></div><!-- 明细弹窗 --><div class="modal-overlay" :class="{ 'show': showDetailModal }" @click="closeDetailModal"><div class="modal-content detail-modal" @click.stop><h2>今日审核明细</h2><div class="detail-content" ref="detailContentRef"><div class="detail-item" v-for="(record, index) in gameStore.todayRecords" :key="index"><div class="detail-header"><span class="article-number">文章编号：{{ index + 1 }}</span></div><div class="detail-info"><div class="detail-row"><span class="detail-label">用户操作：</span><span class="detail-value">{{ getActionText(record.userAction) }}</span></div><div class="detail-row"><span class="detail-label">复审结果：</span><span class="detail-value" :class="{ 'correct': getExpectedAction(record) === 'pass', 'incorrect': getExpectedAction(record) !== 'pass' }">{{ getExpectedActionText(record) }}</span></div><div class="detail-row"><span class="detail-label">理由：</span><span class="detail-value">{{ getReviewReason(record) }}</span></div></div></div></div><div class="modal-buttons"><button class="tech-button" @click="closeDetailModal">关闭</button></div></div></div><!-- 设置弹窗 -->
 <div class="modal-overlay" :class="{ 'show': showSettings }" @click="toggleSettings">
 <div class="close-button" @click.stop="toggleSettings">×</div>
 <div class="modal-content" @click.stop>
@@ -95,6 +100,8 @@ const showWelcome = ref(false);
 const fadeOutWelcome = ref(false);
 const showGamePanel = ref(false);
 const isInteractive = ref(false);
+const showDetailModal = ref(false);
+const detailContentRef = ref<HTMLElement | null>(null);
 // 引用资料弹窗相关
 const showReferencePopup = ref(false);
 const referenceData = ref({
@@ -268,6 +275,7 @@ const referenceDataMap = {
 
 // 谬误解释映射
 const fallacyExplanations = {
+  '以偏概全': '用个别案例概括整体情况',
   '滑坡谬误': '不合理地认为小事件会引发严重后果',
   '诉诸恐惧': '利用恐惧情绪代替理性论证',
   '诉诸权威': '以权威人物的观点作为论证依据',
@@ -276,6 +284,25 @@ const fallacyExplanations = {
   '阴谋论': '毫无根据的猜测和怀疑',
   '过度夸大': '过分夸大事实或后果',
   '人身攻击': '攻击个人而非论点',
+  '预设前提': '在论证中预先假设结论为真',
+  '前提与结论无关': '论据与结论之间没有逻辑联系',
+  '推理太跳跃': '论证过程缺少必要的逻辑步骤',
+  '轶事证据': '用个人经历或个案作为普遍结论的依据',
+  '诉诸情感': '利用情感代替理性论证',
+  '简单归因': '将复杂问题简单归结为单一原因',
+  '虚假两难': '将问题简化为非此即彼的选择',
+  '忽略背景': '忽略相关背景信息进行判断',
+  '稻草人谬误': '歪曲对手论点后再攻击',
+  '偷换概念': '混淆概念含义进行论证',
+  '虚假对比': '不当比较不相关事物',
+  '虚假归因': '错误地将结果归因于某因素',
+  '轻率归纳': '基于不足的证据得出结论',
+  '数据对比': '通过数据对比得出误导性结论',
+  '虚假平衡': '在有明确证据支持一方时仍保持中立',
+  '诉诸自然': '认为自然的就是好的',
+  '诉诸历史': '用历史事件支持当前观点',
+  '虚假权威': '引用不相关或不可靠的权威',
+  '错误类比': '将不同性质的事物进行不当类比',
 };
 
 // 监听游戏状态变化
@@ -283,36 +310,13 @@ watch(() => gameStore.selectedFlaws, (newFlaws) => {
   selectedFlaws.value = newFlaws;
 }, { deep: true });
 
-// 根据当前文章的谬误类型动态调整话术预警
+// 根据逻辑诊断选项动态调整话术预警
 const limitedFallacies = computed(() => {
-  if (!gameStore.currentArticle) {
-    return Object.entries(fallacyExplanations).slice(0, 2);
-  }
-  
-  const articleFallacies = gameStore.currentArticle.fallacies;
-  const fallacyKeys = Object.keys(fallacyExplanations) as Array<keyof typeof fallacyExplanations>;
-  
-  if (articleFallacies.length > 0) {
-    // 如果文章有谬误，显示这些谬误的解释
-    const relevantFallacies: [string, string][] = [];
-    articleFallacies.forEach(fallacy => {
-      // 提取谬误类型（去除括号内容）
-      const fallacyType = fallacy.split('（')[0].split('(')[0];
-      if (fallacyKeys.includes(fallacyType as keyof typeof fallacyExplanations)) {
-        relevantFallacies.push([fallacyType, fallacyExplanations[fallacyType as keyof typeof fallacyExplanations]]);
-      }
-    });
-    
-    // 如果有相关谬误解释，返回前3个
-    if (relevantFallacies.length > 0) {
-      return relevantFallacies.slice(0, 3);
-    }
-  }
-  
-  // 如果文章没有谬误或没有相关解释，随机选取3个谬误类型来干扰玩家判断
-  const allFallacies = Object.entries(fallacyExplanations);
-  const shuffled = [...allFallacies].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, 3);
+  // 返回逻辑诊断选项的前三个及其解释
+  return logicFallacies.value.map(fallacy => [
+    fallacy,
+    fallacyExplanations[fallacy as keyof typeof fallacyExplanations] || '未知谬误'
+  ]);
 });
 
 // 高亮文章内容
@@ -356,6 +360,45 @@ const canRule = computed(() => {
   return gameStore.selectedFlaws.length > 0;
 });
 
+// 动态生成逻辑诊断选项（包含干扰项）
+const logicFallacies = computed(() => {
+  if (!gameStore.currentArticle) return [];
+  
+  // 获取文章的fallacies
+  const articleFallacies = gameStore.currentArticle.fallacies;
+  
+  // 干扰项列表
+  const distractorFallacies = ['预设前提', '前提与结论无关', '推理太跳跃', '轶事证据', '诉诸情感', '简单归因', '虚假两难', '滑坡谬误', '人身攻击', '诉诸权威'];
+  
+  // 如果文章有fallacies
+  if (articleFallacies.length > 0) {
+    // 随机选择文章的2个fallacies作为正确选项
+    const shuffledFallacies = [...articleFallacies].sort(() => Math.random() - 0.5);
+    const correctFallacies = shuffledFallacies.slice(0, 2);
+    
+    // 过滤出不与文章fallacies相同的干扰项
+    const availableDistractors = distractorFallacies.filter(d => !articleFallacies.includes(d));
+    
+    // 如果有可用的干扰项，随机选择一个
+    if (availableDistractors.length > 0) {
+      const randomIndex = Math.floor(Math.random() * availableDistractors.length);
+      const distractor = availableDistractors[randomIndex];
+      
+      // 将干扰项插入到随机位置
+      const result = [...correctFallacies, distractor];
+      
+      // 随机打乱顺序
+      return result.sort(() => Math.random() - 0.5);
+    }
+    
+    // 如果没有可用的干扰项，只返回文章的fallacies
+    return articleFallacies.slice(0, 3);
+  }
+  
+  // 如果没有fallacies，使用默认选项
+  return ['预设前提', '前提与结论无关', '推理太跳跃'];
+});
+
 // 结算统计
 const correctReports = computed(() => {
   return gameStore.todayRecords.filter(record => record.userAction === 'report' && record.isCorrect).length;
@@ -369,22 +412,75 @@ const correctRevises = computed(() => {
   return gameStore.todayRecords.filter(record => record.userAction === 'revise' && record.isCorrect).length;
 });
 
+const correctPasses = computed(() => {
+  return gameStore.todayRecords.filter(record => {
+    const article = gameStore.articles.find(a => a.id === record.articleId);
+    return record.userAction === 'pass' && record.isCorrect && article && article.expectedAction === 'pass';
+  }).length;
+});
+
 const incorrectRevises = computed(() => {
-  return gameStore.todayRecords.filter(record => record.userAction === 'revise' && !record.isCorrect).length;
+  return gameStore.todayRecords.filter(record => {
+    const article = gameStore.articles.find(a => a.id === record.articleId);
+    return record.userAction === 'revise' && !record.isCorrect && article && article.expectedAction === 'pass';
+  }).length;
 });
 
 const incorrectReports = computed(() => {
-  return gameStore.todayRecords.filter(record => record.userAction === 'report' && !record.isCorrect).length;
+  return gameStore.todayRecords.filter(record => {
+    const article = gameStore.articles.find(a => a.id === record.articleId);
+    return record.userAction === 'report' && !record.isCorrect && article && article.expectedAction === 'pass';
+  }).length;
 });
 
 const bonusScore = computed(() => {
   let bonus = 0;
   gameStore.todayRecords.forEach(record => {
-    const hasCorrectFlaw = record.selectedFlaws.some(flaw => {
-      if (!gameStore.currentArticle) return false;
-      return isCorrectFlaw(flaw, record.articleId);
-    });
-    if (hasCorrectFlaw) bonus += 10;
+    const article = gameStore.articles.find(a => a.id === record.articleId);
+    if (!article) return;
+    
+    // 检验论据评分
+    // 判断文章是否存在论据错误
+    const hasEvidenceErrors = article.facts.some(f => 
+      f.sourceStatus === 'missing' || f.sourceStatus === 'unreliable' || f.sourceStatus === 'misquoted' || f.sourceStatus === 'incomplete'
+    );
+    
+    if (hasEvidenceErrors) {
+      // 文章存在论据错误，检查玩家是否勾选了正确的论据错误
+      const correctEvidenceFlaws = record.selectedFlaws.filter(flaw => {
+        const evidenceOptions = ['缺乏信息来源', '信息来源不可靠', '断章取义'];
+        return evidenceOptions.includes(flaw) && isCorrectFlaw(flaw, record.articleId);
+      });
+      
+      if (correctEvidenceFlaws.length > 0) {
+        bonus += 5;
+      }
+    } else {
+      // 文章没有论据错误，检查玩家是否选择了"一切正常"
+      if (record.selectedFlaws.includes('一切正常')) {
+        bonus += 5;
+      }
+    }
+    
+    // 逻辑诊断评分
+    // 判断文章是否存在逻辑谬误
+    const hasLogicalFallacies = article.fallacies.length > 0;
+    
+    if (hasLogicalFallacies) {
+      // 文章存在逻辑谬误，统计玩家勾选的正确逻辑错误数量
+      const correctLogicalFlaws = record.selectedFlaws.filter(flaw => {
+        const logicOptions = ['没有问题'];
+        if (logicOptions.includes(flaw)) return false;
+        return isCorrectFlaw(flaw, record.articleId);
+      });
+      
+      bonus += correctLogicalFlaws.length * 5;
+    } else {
+      // 文章没有逻辑谬误，检查玩家是否选择了"没有问题"
+      if (record.selectedFlaws.includes('没有问题')) {
+        bonus += 5;
+      }
+    }
   });
   return bonus;
 });
@@ -403,12 +499,9 @@ const isCorrectFlaw = (flaw: string, articleId: number): boolean => {
       return article.facts.some(f => f.sourceStatus === 'unreliable');
     case '断章取义':
       return article.facts.some(f => f.sourceStatus === 'misquoted');
-    case '预设前提':
-    case '前提与结论无关':
-    case '推理太跳跃':
-      return article.isViolation;
     default:
-      return false;
+      // 如果是逻辑诊断选项，检查是否是文章的fallacies之一
+      return article.fallacies.includes(flaw);
   }
 };
 
@@ -554,8 +647,8 @@ const updateFlaws = () => {
   }
   
   if (selectedFlaws.value.includes('没有问题')) {
-    const otherLogic = ['预设前提', '前提与结论无关', '推理太跳跃'];
-    otherLogic.forEach(logic => {
+    // 使用动态生成的逻辑诊断选项
+    logicFallacies.value.forEach(logic => {
       const index = selectedFlaws.value.indexOf(logic);
       if (index > -1) selectedFlaws.value.splice(index, 1);
     });
@@ -690,7 +783,10 @@ const nextDay = async () => {
   isLoading.value = true;
   
   try {
-    await gameStore.nextDay(bonusScore.value);
+    // 计算当天的实际收入（与显示的收入一致）
+    const dailyIncome = correctReports.value * 60 - incorrectPasses.value * 40 - (incorrectRevises.value + incorrectReports.value) * 40 + correctPasses.value * 50 + correctRevises.value * 40 + bonusScore.value;
+    
+    await gameStore.nextDay(dailyIncome);
     
     // 如果没有特殊事件，直接播放下一天的背景音乐
     if (!gameStore.showSpecialEvent) {
@@ -698,6 +794,102 @@ const nextDay = async () => {
     }
   } finally {
     isLoading.value = false;
+  }
+};
+
+const openDetailModal = () => {
+  showDetailModal.value = true;
+  // 延迟一下确保DOM已更新，然后滚动到顶部
+  setTimeout(() => {
+    if (detailContentRef.value) {
+      detailContentRef.value.scrollTop = 0;
+    }
+  }, 100);
+};
+
+const closeDetailModal = () => {
+  showDetailModal.value = false;
+};
+
+const getActionText = (action: string) => {
+  switch (action) {
+    case 'pass':
+      return '通过';
+    case 'revise':
+      return '退回修改';
+    case 'report':
+      return '枪毙';
+    default:
+      return action;
+  }
+};
+
+const getExpectedAction = (record: any) => {
+  const article = gameStore.articles.find(a => a.id === record.articleId);
+  return article ? article.expectedAction : 'pass';
+};
+
+const getExpectedActionText = (record: any) => {
+  const expectedAction = getExpectedAction(record);
+  switch (expectedAction) {
+    case 'pass':
+      return '正确';
+    case 'revise':
+      return '退回';
+    case 'report':
+      return '枪毙';
+    default:
+      return '未知';
+  }
+};
+
+const getReviewReason = (record: any) => {
+  const article = gameStore.articles.find(a => a.id === record.articleId);
+  if (!article) return '无法获取文章信息';
+  
+  const expectedAction = article.expectedAction;
+  
+  if (expectedAction === 'pass') {
+    return '文章内容符合要求，没有发现错误信息。';
+  } else {
+    let reason = '';
+    
+    // 收集检验论据的错误
+    const problematicFacts = article.facts.filter(fact => 
+      fact.sourceStatus !== 'normal' && fact.sourceStatus !== 'truth'
+    );
+    
+    if (problematicFacts.length > 0) {
+      reason += '检验论据错误：';
+      problematicFacts.forEach((fact, index) => {
+        if (index > 0) reason += '；';
+        reason += `"${fact.text}"`;
+        
+        switch (fact.sourceStatus) {
+          case 'missing':
+            reason += '（缺乏信息来源）';
+            break;
+          case 'unreliable':
+            reason += '（信息来源不可靠）';
+            break;
+          case 'misquoted':
+            reason += '（断章取义）';
+            break;
+          case 'incomplete':
+            reason += '（信息来源不完整）';
+            break;
+        }
+      });
+    }
+    
+    // 收集逻辑诊断的错误
+    if (article.fallacies.length > 0) {
+      if (reason) reason += '\n';
+      reason += '逻辑诊断错误：';
+      reason += article.fallacies.join('、');
+    }
+    
+    return reason || '文章内容存在问题，需要相应处理。';
   }
 };
 
@@ -1555,6 +1747,7 @@ onUnmounted(() => {
 .modal-buttons {
   display: flex;
   justify-content: center;
+  gap: 16px;
   margin-top: 32px;
 }
 
@@ -1873,6 +2066,81 @@ onUnmounted(() => {
 
 .modal-overlay.show {
   display: flex;
+}
+
+/* 明细弹窗样式 */
+.modal-content.detail-modal {
+  max-width: 800px;
+}
+
+.detail-content {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.article-number {
+  font-weight: bold;
+  color: #00ffff;
+}
+
+.result {
+  font-weight: bold;
+}
+
+.result.correct {
+  color: #00ff00;
+}
+
+.result.incorrect {
+  color: #ff0000;
+}
+
+.detail-info {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.detail-label {
+  width: 80px;
+  font-weight: bold;
+  color: #00ffff;
+}
+
+.detail-value {
+  flex: 1;
+  word-break: break-word;
+  white-space: pre-line;
+}
+
+.tech-button.secondary {
+  background: rgba(0, 255, 255, 0.2);
+  border-color: rgba(0, 255, 255, 0.5);
+  margin-right: 10px;
+}
+
+.tech-button.secondary:hover {
+  background: rgba(0, 255, 255, 0.3);
 }
 
 /* 响应式设计 */

@@ -13,7 +13,11 @@
   "facts": [
     {
       "text": "星港新城保障房项目与幼儿园、卫生站、公交接驳线同步交付使用。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "missing"
+    },
+    {
+      "text":"保障房最大的痛点是什么？位置偏、配套差。",
+      "sourceStatus": "missing"
     }
   ],
   "difficulty": 4

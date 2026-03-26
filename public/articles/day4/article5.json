@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "咚达每年出版的原创长篇小说超过8000部，但能进入主流书店销售的不足10%。",
-      "sourceStatus": "missing"
+      "sourceStatus": "misquoted"
     },
     {
       "text": "近五年内有超过300位中青年作家因“题材敏感”而选择“自我审查”或放弃出版。",
-      "sourceStatus": "missing"
+      "sourceStatus": "misquoted"
     }
   ],
   "difficulty": 4

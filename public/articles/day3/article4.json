@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "AI辅助诊断系统启用一年，急诊误诊率从4.5%降至3.2%（下降28%），诊断时间平均缩短22分钟。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "truth"
     },
     {
       "text": "倾向性评分匹配分析显示AI辅助组对可疑征象检出率提高41%，夜班效果最明显。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "truth"
     }
   ],
   "difficulty": 2

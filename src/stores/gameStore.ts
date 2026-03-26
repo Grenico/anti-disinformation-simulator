@@ -9,8 +9,10 @@ interface SaveData {
   timestamp: number;
   currentDay: number;
   currentIndex: number;
+  completedCount: number;
   dailyScore: number;
   totalSalary: number;
+  todayRecords: Record[];
 }
 
 export const useGameStore = defineStore('game', {
@@ -210,16 +212,20 @@ export const useGameStore = defineStore('game', {
           autoSaveSlot.timestamp = Date.now();
           autoSaveSlot.currentDay = this.currentDay;
           autoSaveSlot.currentIndex = this.currentIndex;
+          autoSaveSlot.completedCount = this.completedCount;
           autoSaveSlot.dailyScore = this.dailyScore;
           autoSaveSlot.totalSalary = this.totalSalary;
+          autoSaveSlot.todayRecords = [...this.todayRecords];
         } else {
           saves.push({
             slot: 1,
             timestamp: Date.now(),
             currentDay: this.currentDay,
             currentIndex: this.currentIndex,
+            completedCount: this.completedCount,
             dailyScore: this.dailyScore,
             totalSalary: this.totalSalary,
+            todayRecords: [...this.todayRecords],
           });
         }
         localStorage.setItem(SAVES_KEY, JSON.stringify(saves));
@@ -231,16 +237,20 @@ export const useGameStore = defineStore('game', {
           existingSave.timestamp = Date.now();
           existingSave.currentDay = this.currentDay;
           existingSave.currentIndex = this.currentIndex;
+          existingSave.completedCount = this.completedCount;
           existingSave.dailyScore = this.dailyScore;
           existingSave.totalSalary = this.totalSalary;
+          existingSave.todayRecords = [...this.todayRecords];
         } else {
           saves.push({
             slot: slot,
             timestamp: Date.now(),
             currentDay: this.currentDay,
             currentIndex: this.currentIndex,
+            completedCount: this.completedCount,
             dailyScore: this.dailyScore,
             totalSalary: this.totalSalary,
+            todayRecords: [...this.todayRecords],
           });
         }
         localStorage.setItem(SAVES_KEY, JSON.stringify(saves));
@@ -257,19 +267,19 @@ export const useGameStore = defineStore('game', {
       if (save) {
         this.currentDay = save.currentDay;
         this.currentIndex = save.currentIndex;
+        this.completedCount = save.completedCount;
         this.dailyScore = save.dailyScore;
         this.totalSalary = save.totalSalary;
-        this.completedCount = 0;
-        this.todayRecords = [];
+        this.todayRecords = [...save.todayRecords];
         this.selectedFlaws = [];
         await this.loadArticles(this.currentDay);
         window.dispatchEvent(new CustomEvent('game-loaded'));
       }
     },
 
-    async nextDay(bonusScore: number = 0) {
-      // 将当日工资和额外奖励累加到累计工资中
-      this.totalSalary += Number(this.dailyScore) + Number(bonusScore);
+    async nextDay(dailyIncome: number = 0) {
+      // 将当日工资累加到累计工资中
+      this.totalSalary += Number(dailyIncome);
       
       // 应用部门处罚/奖励到总工资
       if (this.departmentPenaltyOrBonus) {

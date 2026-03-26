@@ -13,7 +13,7 @@
   "facts": [
     {
       "text": "星核科技最新一代星芯处理器实现全自主指令集架构和核心模块设计，性能达到国际主流水平。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "missing"
     }
   ],
   "difficulty": 6

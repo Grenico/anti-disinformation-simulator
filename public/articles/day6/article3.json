@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "咚达“星网”平台累计开放数据集超5000个，1200余家机构利用，衍生应用从80个增至430个。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "truth"
     },
     {
       "text": "国际数据治理协会评估咚达数据开放成熟度全球第5，隐私泄露风险控制在0.03%以下。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "truth"
     }
   ],
   "difficulty": 5

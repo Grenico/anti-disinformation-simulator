@@ -9,7 +9,7 @@
   "isViolation": true,
   "violationType": "程序批判/体制批判",
   "expectedAction": "revise",
-  "fallacies": ["以偏概全", "偷换概念", "诉诸情感", "虚假平衡"],
+  "fallacies": ["以偏概全", "偷换概念", "诉诸情感"],
   "facts": [
     {
       "text": "环评听证会安排在周三上午，地点设在远离社区的区政府会议室；居民意见被归纳为“部分群众对项目不了解，需加强宣传”。",
@@ -17,7 +17,7 @@
     },
     {
       "text": "辉光联邦环评听证会安排在周末，地点设在社区活动中心，由独立第三方主持，居民意见需逐条回应并公示。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "missing"
     }
   ],
   "difficulty": 5

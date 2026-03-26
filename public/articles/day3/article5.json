@@ -9,14 +9,10 @@
   "isViolation": true,
   "violationType": "片面解读/煽动恐慌",
   "expectedAction": "revise",
-  "fallacies": ["诉诸权威（舍恩伯格）", "以偏概全", "偷换概念", "诉诸情感"],
+  "fallacies": ["诉诸权威", "以偏概全", "偷换概念", "诉诸情感"],
   "facts": [
     {
       "text": "根据网络安全研究机构发布的报告，咚达市场上主流智能家居品牌的用户协议平均长度为一万两千字。",
-      "sourceStatus": "unreliable"
-    },
-    {
-      "text": "涉及隐私授权的条款平均分布在第七页之后。",
       "sourceStatus": "missing"
     }
   ],

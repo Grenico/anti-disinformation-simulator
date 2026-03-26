@@ -9,14 +9,14 @@
   "isViolation": true,
   "violationType": "片面解读/误导质疑",
   "expectedAction": "revise",
-  "fallacies": ["诉诸权威（福柯）", "以偏概全", "偷换概念", "虚假两难"],
+  "fallacies": ["诉诸权威", "以偏概全", "偷换概念", "虚假两难"],
   "facts": [
     {
       "text": "AI系统首月共抓拍违规行为一千二百余起，其中被居民申诉成功的比例高达31%。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "missing"
     },
     {
-      "text": "申诉成功的案例中，包括一位老人将装有厨余垃圾的袋子投入湿垃圾桶，AI将“袋子”识别为“其他垃圾”而判罚。",
+      "text": "咚达新安社区近期推行“AI垃圾分类监控系统”，在每栋楼的垃圾桶旁安装摄像头，通过图像识别自动抓拍违规投放行为，并处以罚款。实施一个月后，社区分类准确率从62%提升至89%",
       "sourceStatus": "missing"
     }
   ],

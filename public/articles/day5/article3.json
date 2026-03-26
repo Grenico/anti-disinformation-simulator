@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "咚达养老护理员的平均月薪仅为3800信用点，是辉光联邦同行的四分之一。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "misquoted"
     },
     {
       "text": "咚达养老护理员中，接受过专业培训的仅占31%，而辉光联邦这一比例是89%。",
-      "sourceStatus": "missing"
+      "sourceStatus": "misquoted"
     }
   ],
   "difficulty": 4

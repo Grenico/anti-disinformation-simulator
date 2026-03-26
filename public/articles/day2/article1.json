@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "咚达智慧交通系统上线一年，高峰期拥堵指数下降12%，通行效率提升15%。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "truth"
     },
     {
       "text": "信号周期与车辆延误关系符合韦伯斯特公式，AI使路口饱和度稳定在0.7-0.8。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "truth"
     }
   ],
   "difficulty": 2

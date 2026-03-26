@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "“青苗计划”十年输送3000多名本科教师到乡村，七成以上期满留任。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "missing"
     },
     {
       "text": "青苗教师所教班级学业合格率比非项目班高11个百分点，辍学率下降6%。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "missing"
     }
   ],
   "difficulty": 3

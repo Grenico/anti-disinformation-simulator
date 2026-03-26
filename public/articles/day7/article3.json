@@ -13,11 +13,7 @@
   "facts": [
     {
       "text": "《城市公共空间体检报告》显示，被抽查的120条主次干道中，无障碍设施完好率仅61%，盲道被占用、中断、破损的比例高达47%。",
-      "sourceStatus": "missing"
-    },
-    {
-      "text": "这些路段在“城市形象满意度”调查中得分却高达89%。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "misquoted"
     }
   ],
   "difficulty": 5

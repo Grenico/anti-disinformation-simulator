@@ -9,11 +9,11 @@
   "isViolation": true,
   "violationType": "片面解读/煽动对立",
   "expectedAction": "report",
-  "fallacies": ["诉诸权威（吉登斯）", "以偏概全", "虚假归因", "滑坡谬误"],
+  "fallacies": ["诉诸权威", "以偏概全", "虚假归因", "滑坡谬误"],
   "facts": [
     {
       "text": "根据平台公布的财务数据，“速速”向商户端收取25%-35%的抽成，其中并未为骑手预留社保成本。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "misquoted"
     },
     {
       "text": "一份行业研究报告显示，目前咚达灵活用工平台中，将从业者定义为“合作方”而非“员工”的比例已高达87%。",

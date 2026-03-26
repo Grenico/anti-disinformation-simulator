@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "咚达某城市暴雨内涝被自媒体连发数篇“深度分析”；辉光联邦同月类似内涝，这些账号只字不提。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "truth"
     },
     {
       "text": "部分自媒体对咚达和辉光的问题采取截然不同的报道标准和归因方式。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "truth"
     }
   ],
   "difficulty": 6

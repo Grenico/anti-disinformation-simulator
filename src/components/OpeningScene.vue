@@ -18,6 +18,8 @@ const sounds = {
 const backgroundMusic = new Audio('/assets/audio/background/Automata(opening).mp3');
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.4;
+// 立即开始预加载背景音乐
+backgroundMusic.load();
 
 // 设置音量
 Object.values(sounds).forEach(audio => {
@@ -235,8 +237,7 @@ onMounted(async () => {
   // 图片加载完成后才开始
   isLoading.value = false;
   
-  // 播放背景音乐
-  backgroundMusic.load();
+  // 播放背景音乐（已经预加载）
   backgroundMusic.play().catch(e => console.log('背景音乐播放失败:', e));
   
   startTyping();

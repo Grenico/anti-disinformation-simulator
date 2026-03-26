@@ -9,15 +9,15 @@
   "isViolation": true,
   "violationType": "片面解读/煽动恐慌",
   "expectedAction": "revise",
-  "fallacies": ["诉诸权威（约纳斯）", "偷换概念", "以偏概全", "阴谋论"],
+  "fallacies": ["诉诸权威", "偷换概念", "以偏概全", "阴谋论"],
   "facts": [
     {
       "text": "据内部员工反映，该医院将“AI采纳率”纳入绩效考核，对不采纳AI建议的医生进行扣分和约谈。",
-      "sourceStatus": "missing"
+      "sourceStatus": "unreliable"
     },
     {
-      "text": "AI不再是医生的工具，而是医生必须服从的“隐性上级”。",
-      "sourceStatus": "unreliable"
+      "text": "医疗事故",
+      "sourceStatus": "misquoted"
     }
   ],
   "difficulty": 3

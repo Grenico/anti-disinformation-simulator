@@ -12,12 +12,12 @@
   "fallacies": ["虚假平衡", "偷换概念", "诉诸情感", "以偏概全"],
   "facts": [
     {
-      "text": "新港事件的完整视频显示，是抗议者先向警察投掷燃烧瓶，警察才使用催泪瓦斯。",
+      "text": "围堵事件的完整视频显示，是抗议者先向警察投掷燃烧瓶，警察才使用催泪瓦斯。",
       "sourceStatus": "missing"
     },
     {
       "text": "辉光官方调查也已确认，涉事警察的行为符合“紧急状态执法条例”。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "missing"
     }
   ],
   "difficulty": 5

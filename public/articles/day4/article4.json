@@ -9,15 +9,15 @@
   "isViolation": true,
   "violationType": "虚假对比/体制批判",
   "expectedAction": "report",
-  "fallacies": ["虚假对比", "以偏概全", "偷换概念", "诉诸权威（导演）"],
+  "fallacies": ["虚假对比", "以偏概全", "偷换概念", "诉诸权威"],
   "facts": [
     {
       "text": "咚达近三年上映的国产影片中，有超过六成经历过送审删改，平均删减时长约12分钟。",
-      "sourceStatus": "missing"
+      "sourceStatus": "misquoted"
     },
     {
       "text": "星联国电影在国际奖项中获奖数量是咚达的8倍。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "missing"
     }
   ],
   "difficulty": 4

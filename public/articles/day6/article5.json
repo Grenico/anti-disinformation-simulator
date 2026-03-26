@@ -13,11 +13,11 @@
   "facts": [
     {
       "text": "咚达主流群体对“少数民族优惠政策”的支持率从十年前的67%降至31%。",
-      "sourceStatus": "missing"
+      "sourceStatus": "misquoted"
     },
     {
       "text": "南屿族人均收入与咚达平均水平的差距在过去十年仅缩小了5%。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "misquoted"
     }
   ],
   "difficulty": 5

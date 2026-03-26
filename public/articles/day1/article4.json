@@ -9,7 +9,7 @@
   "isViolation": true,
   "violationType": "煽动对立/极端概括",
   "expectedAction": "report",
-  "fallacies": ["以偏概全", "稻草人谬误", "诉诸人身"],
+  "fallacies": ["以偏概全", "稻草人谬误", "人身攻击"],
   "facts": [
     {
       "text": "我有个朋友在某科技巨头做算法优化，公司规定是朝九晚六，但实际每天都要干到深夜，周末还要随叫随到。",

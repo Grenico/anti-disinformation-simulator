@@ -12,12 +12,8 @@
   "fallacies": ["诉诸情感", "偷换概念", "虚假对比", "以偏概全"],
   "facts": [
     {
-      "text": "实验室角落里摆着三台设备：辉光的光刻机、樱都的蚀刻机、北陆的测试仪。",
-      "sourceStatus": "missing"
-    },
-    {
       "text": "辉光的实验室里，没有一台咚达的设备。",
-      "sourceStatus": "unreliable"
+      "sourceStatus": "truth"
     }
   ],
   "difficulty": 6
